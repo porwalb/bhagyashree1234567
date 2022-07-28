@@ -38,7 +38,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           pwd
-          cd /home/runner/work/java_demo/
+          cd /home/runner/work/java_demo/java_demo
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         

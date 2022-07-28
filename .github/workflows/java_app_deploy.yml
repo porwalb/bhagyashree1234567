@@ -40,6 +40,6 @@ jobs:
           pwd
           cd /home/runner/work/java_demo/java_demo
           mvn clean package
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build -t public.ecr.aws/r2h7l8h0/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push public.ecr.aws/r2h7l8h0/$ECR_REPOSITORY:$IMAGE_TAG
         

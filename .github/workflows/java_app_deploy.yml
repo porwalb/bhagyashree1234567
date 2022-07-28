@@ -34,7 +34,7 @@ jobs:
       - name: "Build,tag and push image to ECR"
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: java_demo_app
+          ECR_REPOSITORY: java_demo_app1
           IMAGE_TAG: ${{ github.sha }}
         run: |
           pwd

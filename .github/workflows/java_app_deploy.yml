@@ -38,7 +38,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
       
       - name: "Build,tag and push image to ECR"
-        id: buid-image
+        id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: java_demo_app1

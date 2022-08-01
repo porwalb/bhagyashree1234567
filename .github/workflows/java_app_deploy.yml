@@ -19,6 +19,12 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+        
+      - name: Build with Maven
+        run: |
+          pwd
+          cd /home/runner/work/java_demo/java_demo
+          mvn clean package
       
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v1
@@ -37,25 +43,6 @@ jobs:
           ECR_REPOSITORY: java_demo_app1
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          pwd
-          cd /home/runner/work/java_demo/java_demo
-          mvn clean package
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-    
-      - name: Fill in the new image ID in the Amazon ECS task definition
-        id: task-def
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: task-definition.json
-          container-name: javademoapp
-          image: ${{ steps.build-image.outputs.image }}
-
-      - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          cluster: javademoapp
-          wait-for-service-stability: true
-

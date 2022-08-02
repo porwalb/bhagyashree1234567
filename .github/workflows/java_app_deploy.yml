@@ -53,14 +53,14 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: javademoapp
+          container-name: java_app_container
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          cluster: java-app-cluster
+          cluster: java-demo-app-cluster
           service: java_demo_app_service
           wait-for-service-stability: true
 

@@ -3,7 +3,7 @@
   "executionRoleArn": "arn:aws:iam::268442682561:role/ECSTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "java_app_container",
+      "name": "e0096fa6ca964da88efd63448973a029",
       "portMappings": [
         {
           "hostPort": 8080,

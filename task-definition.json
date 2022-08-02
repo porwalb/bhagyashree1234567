@@ -35,7 +35,16 @@
       "dependsOn": null,
       "disableNetworking": null,
       "interactive": null,
-      "healthCheck": ["CMD-SHELL", "curl -f http://localhost:8000/ || exit 1"],
+      "healthCheck": {
+              "retries": 3,
+              "command": [
+                  ["CMD-SHELL", 
+                   "curl -f http://localhost:8000/ || exit 1"]
+              ],
+              "timeout": 5,
+              "interval": 30,
+              "startPeriod": null
+          },
       "essential": true,
       "links": null,
       "hostname": null,

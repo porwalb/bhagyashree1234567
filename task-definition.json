@@ -6,7 +6,7 @@
       "dnsSearchDomains": null,
       "environmentFiles": null,
       "logConfiguration": null,
-      "entryPoint": null,
+      "entryPoint": ["sh","-c"],
       "portMappings": [
         {
           "hostPort": 8080,

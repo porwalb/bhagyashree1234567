@@ -3,10 +3,7 @@
   "executionRoleArn": "arn:aws:iam::268442682561:role/ECSTaskExecutionRole",
   "containerDefinitions": [
     {
-      "dnsSearchDomains": null,
-      "environmentFiles": null,
-      "logConfiguration": null,
-      "entryPoint": null,
+      "name": "javademoapp",
       "portMappings": [
         {
           "hostPort": 8080,
@@ -14,27 +11,9 @@
           "containerPort": 8080
         }
       ],
-      "command": null,
-      "linuxParameters": null,
-      "cpu": 0,
-      "environment": [],
-      "resourceRequirements": null,
-      "ulimits": null,
-      "dnsServers": null,
-      "mountPoints": [],
-      "workingDirectory": null,
-      "secrets": null,
-      "dockerSecurityOptions": null,
+      "essential":true,
       "memory": 5,
-      "memoryReservation": null,
-      "volumesFrom": [],
-      "stopTimeout": null,
       "image": "268442682561.dkr.ecr.ap-south-1.amazonaws.com/java_demo_app1:1a5ff532c167dbda9e19576abad61a50115d13d2",
-      "startTimeout": null,
-      "firelensConfiguration": null,
-      "dependsOn": null,
-      "disableNetworking": null,
-      "interactive": null,
       "healthCheck": {
               "retries": 3,
               "command": [ "CMD-SHELL", 
@@ -43,25 +22,14 @@
               "timeout": 5,
               "interval": 30,
               "startPeriod": null
-          },
-      "essential": true,
-      "links": null,
-      "hostname": null,
-      "extraHosts": null,
-      "pseudoTerminal": null,
-      "user": null,
-      "readonlyRootFilesystem": null,
-      "dockerLabels": null,
-      "systemControls": null,
-      "privileged": null,
-      "name": "javademoapp"
+          }
+     
     }
   ],
   "placementConstraints": [],
   "memory": "5",
   "taskRoleArn": "",
   "compatibilities": [
-    "EXTERNAL",
     "EC2"
   ],
   "taskDefinitionArn": "arn:aws:ecs:ap-south-1:268442682561:task-definition/javademoapp:1",
@@ -79,11 +47,7 @@
     "EC2"
   ],
   "networkMode": "host",
-  "runtimePlatform": null,
   "cpu": "1024",
   "revision": 1,
-  "status": "ACTIVE",
-  "inferenceAccelerators": null,
-  "proxyConfiguration": null,
-  "volumes": []
+  "status": "ACTIVE"
 }

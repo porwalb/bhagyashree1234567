@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::268442682561:user/porwalb2",
+  "executionRoleArn": "arn:aws:iam::268442682561:role/ECSTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -59,7 +59,7 @@
   ],
   "placementConstraints": [],
   "memory": "5",
-  "taskRoleArn": "arn:aws:iam::268442682561:user/porwalb2",
+  "taskRoleArn": "",
   "compatibilities": [
     "EXTERNAL",
     "EC2"

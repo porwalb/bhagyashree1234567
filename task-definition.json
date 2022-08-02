@@ -3,7 +3,7 @@
   "executionRoleArn": "arn:aws:iam::268442682561:role/ECSTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "javademoapp",
+      "name": "java_app_container",
       "portMappings": [
         {
           "hostPort": 8080,
@@ -33,7 +33,7 @@
     "EC2"
   ],
   "taskDefinitionArn": "arn:aws:ecs:ap-south-1:268442682561:task-definition/javademoapp:1",
-  "family": "javademoapp",
+  "family": "java_app_container",
   "requiresAttributes": [
     {
       "targetId": null,
